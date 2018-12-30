@@ -1,0 +1,86 @@
+@layout('client.layouts.app')
+@section('content')
+  <div class="qc-register qc-border container-expand uk-padding-large uk-box-shadow-xlarge uk-margin-large-right uk-margin-large-left uk-margin-top uk-margin-bottom">
+    <div class="qu-register-title uk-text-center">
+      <h1><span class="uk-text-small">الخطوة الأولى</span>تسجيل حساب جديد على موقعنا</h1>
+    </div>
+
+    <form class="uk-form-stacked uk-margin-medium-top uk-margin-bottom" action="{{ route('auth.store') }}" method="POST">
+      {{ csrfField() }}
+
+      @include('auth._includes.confirmNotification')
+
+      <fieldset class="uk-fieldset">
+        <div class="uk-flex uk-flex-center uk-grid-small uk-margin" uk-grid>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="first-name">الإسم الأول</label>
+            <div class="uk-form-controls">
+              <input class="uk-input {{ hasErrorFor('firstName') ? 'uk-form-danger' : '' }}" id="first-name" type="text" name="firstName" value="{{ old('firstName', '') }}" placeholder="الإسم الأول">
+            </div>
+            {{ elIf('<span class="uk-text-danger uk-text-small uk-animation-shake">$self</span>', getErrorFor('firstName'), hasErrorFor('firstName')) }}
+          </div>
+          {{--  First Name  --}}
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="last-name">الكنية</label>
+            <div class="uk-form-controls uk-inline uk-width-1-1">
+              <input class="uk-input" id="last-name" type="text" name="lastName" value="{{ old('lastName', '') }}" placeholder="الكنية...">
+            </div>
+            {{ elIf('<span class="uk-text-danger uk-text-small uk-animation-shake">$self</span>', getErrorFor('lastName'), hasErrorFor('lastName')) }}
+          </div>
+          {{--  Last Name  --}}
+        </div>
+        {{--  Full Name  --}}
+
+        <div class="uk-flex uk-flex-center uk-grid-small uk-margin" uk-grid>
+          <div class="uk-width-1-1@s">
+            <label class="uk-form-label uk-text-bold" for="email">البريد الالكتروني</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="email" type="email" name="email" value="{{ old('email', '') }}" placeholder="البريد الالكتروني">
+            </div>
+            {{ elIf('<span class="uk-text-danger uk-text-small uk-animation-shake">$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+          </div>
+        </div>
+        {{--  Email  --}}
+
+        <div class="uk-flex uk-flex-center uk-grid-small uk-margin" uk-grid>
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label uk-text-bold" for="password">كلمة تامرور</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="password" type="password" name="password" value="{{ old('password', '') }}" placeholder="كلمة المرور">
+            </div>
+            {{ elIf('<span class="uk-text-danger uk-text-small uk-animation-shake">$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
+          </div>
+          {{--  Password  --}}
+          <div class="uk-width-1-2@s">
+            <label class="uk-form-label" for="confirm-password">تأكيد كلمة المرور</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="confirm-password" type="password" name="confimrPassword" value="{{ old('confimrPassword', '') }}" placeholder="تأكيد كلمة المرور">
+            </div>
+            {{ elIf('<span class="uk-text-small uk-animation-shake">$self</span>', getErrorFor('confimrPassword'), hasErrorFor('confimrPassword')) }}
+          </div>
+          {{--  Confirm Password  --}}
+        </div>
+        {{--  Security --}}
+
+        <div class="uk-flex uk-flex-center uk-grid-small uk-margin-top" uk-grid>
+          <div class="uk-form-controls uk-width-1-1">
+            <div class="uk-margin uk-grid-collapse uk-child-width-auto uk-grid">
+              <label class="uk-margin-left"><input class="uk-radio" type="radio" name="sex" value="male" checked> ذكر </label>
+              <label><input class="uk-radio" type="radio" name="sex" value="female"> أنثى </label>
+            </div>
+          </div>
+        </div>
+        {{--  Sex  --}}
+
+        <div class="uk-margin-medium-top uk-flex uk-flex-center uk-grid-small" uk-grid>
+          <div class="uk-width-1-1@s">
+            <button class="uk-button qc-button-primary uk-width-1-1@s" type="submit">
+              تسجيل الحساب
+            </button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+@endsection

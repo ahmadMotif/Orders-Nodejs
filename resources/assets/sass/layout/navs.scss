@@ -1,0 +1,25 @@
+// Top Nav
+.uk-navbar-center:not(:only-child) {
+  right: 25%;
+}
+nav.qc-top-nav, nav.qc-main-nav {
+  li {
+    .uk-svg {
+      fill: none;
+    }
+    a {
+      min-height: 100px;
+    }
+  }
+}
+nav.qc-main-nav {
+  li {
+    a {
+      min-height: 45px;
+      height: 45px;
+    }
+  }
+  .qc-site-title {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, .9);
+  }
+}

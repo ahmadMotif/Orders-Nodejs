@@ -1,0 +1,51 @@
+<nav class="qc-top-nav uk-navbar uk-navbar-transparent" uk-navbar>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li>
+        <a href="#">
+          <img src="/imgs/icons/social/instagram.svg" width="18" height="18" uk-svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="/imgs/icons/social/youtube.svg" width="18" height="18" uk-svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="/imgs/icons/social/twitter.svg" width="18" height="18" uk-svg>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="/imgs/icons/social/facebook.svg" width="18" height="18" uk-svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+  {{--  /.Right NavBbar  --}}
+  <div class="uk-navbar-center">
+    <div class="uk-navbar-item">
+      <a href="/" class="uk-link-reset uk-text-center">
+        <h1 class="qc-site-title uk-margin-remove uk-heading-primary">قبسات</h1>
+        <span class="qc-site-subtitle uk-article-meta uk-text-center uk-text-small">للطباعة الإلكترونية و الورقية</span>
+      </a>
+    </div>
+  </div>
+  {{--  /.Cenyer NavBbar  --}}
+  <div class="uk-navbar-left">
+    @loggedIn
+      <div class="uk-navbar-item">
+        <a href="#" class="#">{{ auth.user.first_name }}</a>
+      </div>
+    @else
+      <div class="uk-navbar-item">
+        <a href="#" class="uk-button uk-button-default">تسجيل دخول</a>
+      </div>
+      <div class="uk-navbar-item">
+        <a href="{{ route('auth.register') }}" class="uk-button uk-button-default">توثيق حساب</a>
+      </div>
+    @endloggedIn
+  </div>
+  {{--  /.Left Navbr  --}}
+</nav>

@@ -1,0 +1,18 @@
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+
+@import "~uikit/src/scss/uikit-theme.scss";
+
+@import "~uikit/dist/css/uikit-rtl.css";
+
+//  Custom Themes
+// Client
+@import "./abstracts/variabls.scss";
+@import "./abstracts/overrides.scss";
+@import "./themes/client.scss";
+@import "./layout/general.scss";
+@import "./layout/navs.scss";
+@import "./components/forms.scss";
+@import "./components/buttons.scss";
+// Manage
+

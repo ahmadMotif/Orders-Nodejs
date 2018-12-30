@@ -1,0 +1,32 @@
+html, body {
+  font-size: 14px;
+  font-family: 'cocon-next-arabic';
+  font-weight: bold;
+}
+.uk-navbar-nav > li > a,
+.uk-navbar-dropdown-nav > li > a,
+.uk-navbar-item,
+.uk-button,
+button,
+a,
+{
+  font-family: 'bein';
+  font-size: .9rem;
+  color: $main-color;
+  font-weight: normal;
+}
+// p {
+//   font-family: 'cocon-next-arabic';
+//   font-size: 14px;
+//   font-weight: 600;
+//   word-spacing: 1px;
+// }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'KayrawanRegular';
+  font-weight: normal;
+  font-style: normal;
+  color: $main-color;
+}
+hr {
+  border-top: 2px solid $main-color;
+}

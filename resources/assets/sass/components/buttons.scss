@@ -1,0 +1,12 @@
+.uk-button {
+  border-width: 2px;
+  font-size: .9rem;
+}
+.uk-button-default {
+  background-color: transparent;
+  color: #999999;
+  border-color: $main-color;
+}
+.uk-button-default:hover {
+  background: transparent;
+}

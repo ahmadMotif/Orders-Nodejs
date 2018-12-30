@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {{--  {{ cspMeta() }}  --}}
+  <title>QAPPASSAT</title>
+  {{ style(versioncss('app')) }}
+  {{--  Fonts  --}}
+  <link rel="stylesheet" type="text/css" href="//www.fontstatic.com/f=bein" />
+  <link rel="stylesheet" type="text/css" href="//www.fontstatic.com/f=cocon-next-arabic" />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/kayrawan" type="text/css"/>
+</head>
+<body>
+  {{-- Start Wrapper All Project  --}}
+  <div id="app" class="qc-wrapper uk-container-expand uk-background-cover uk-height-viewport " style="background-image: url('/imgs/paper-bg.jpg');">
+    <div class="qc-border uk-container-expand uk-padding-remove uk-margin-medium-top uk-margin-medium-bottom uk-margin-medium-left uk-margin-medium-right">
+      <header class="qc-header">
+        @include('client.partials.navs.topNav')
+        <hr class="uk-margin-remove">
+        @include('client.partials.navs.mainNav')
+        <hr class="uk-margin-remove">
+      </header>
+      <main class="qc-main uk-container uk-margin-large-top uk-margin-large-bottom">
+        @!section('content')
+      </main>
+      <footer class="qc-footer">
+
+      </footer>
+    </div>
+    {{--  ./ Borderd All Pages  --}}
+    {{ script(versionjs('app')) }}
+  </div>
+  {{--  End Wrapper All Project  --}}
+</body>
+</html>

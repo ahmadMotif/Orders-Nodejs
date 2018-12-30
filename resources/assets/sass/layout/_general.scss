@@ -1,0 +1,14 @@
+// Wrapper
+.qc-wrapper  {
+  background: #fffcf9;
+  background-size: 300px 300px;
+  background-repeat: repeat;
+  line-height: 1.42857143;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+// Borders
+.qc-border {
+    border: 2px solid $main-color;
+}
